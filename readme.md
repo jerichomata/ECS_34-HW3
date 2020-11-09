@@ -44,3 +44,9 @@ IV. Probelms
         - return -2 if the file cannot be opened 
 
     b. PART #2
+        - implement getallhigherthan 
+        - takes four arg: array of int, length of array, threshold int, and pointer to an int
+        - return an array of all int in the first argument that are higher than threshold
+        - new array must appear in opposite order 
+        - length of new array stored in forth argument
+        - return NULL if function is given any null pointers 
