@@ -42,3 +42,5 @@ IV. Probelms
         - close the file when done
         - return -1 if either argument is a null pointer
         - return -2 if the file cannot be opened 
+
+    b. PART #2
