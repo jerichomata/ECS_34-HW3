@@ -1,10 +1,7 @@
 #include <stdio.h> 
 #include <stdlib.h>
-#include <string.h>
 
 // #include "prog3.h"
-
-// #define NULL_PTR_STR "(null pointer)"
 
 // int parseForHighest(const char* filename, int* highest) 
 // {
@@ -38,7 +35,7 @@
 //     }
 // }   
 
-/* int* getAllHigherThan(const int* arr, unsigned arrlen, int threshold, unsigned* newArrlen) 
+int* getAllHigherThan(const int* arr, unsigned arrlen, int threshold, unsigned* newArrlen) 
 {
     if (arr == NULL || arrlen == 0 || threshold == 0 || newArrlen == NULL)
     {
@@ -69,31 +66,24 @@
         m -= 1;
     }
     
-    // free(new_arr);
-    // new_arr = NULL;
+    free(new_arr);
     // final_arr[new_l] = '\0';
     return final_arr;
 
-}  */
+} 
 
-// char* strtok_c(const char* str, const char* delim) 
-// {
-//     // char* str2;
-//     // strcpy(str2, str);
-
-//     // int len = sizeof(str2);
-//     // char* new_arr;
-//     // for (int i = 0; i < len; i++)
-//     // {
-//     //     if (str2[i] != delim)
-//     //     {
-//     //         new_arr[i] = str2[i];
-//     //     }
-//     // }
-//     // return new_arr;
-    
-//     char* cpy = strdup(str);
-//     char* tok = strtok(cpy, delim);
-//     free(tok);
-//     return tok;
-// }
+int main()
+{
+    int arr[] = {18, 12, 22, 37, 15};
+    unsigned newArrlen = 0;
+    int* higherThan = getAllHigherThan(arr, 5, 15, &newArrlen);
+    for (unsigned i = 0; i < newArrlen; ++i)
+        printf("Index %u: %d\n", i, higherThan[i]);
+    free(higherThan);
+    printf("===\n");
+    int arr2[] = {38, 15, 16, 22, 9, 32, 25, 20};
+    higherThan = getAllHigherThan(arr2, 8, 19, &newArrlen);
+    for (unsigned i = 0; i < newArrlen; ++i)
+        printf("Index %u: %d\n", i, higherThan[i]);
+    free(higherThan);
+}
