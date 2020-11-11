@@ -70,6 +70,7 @@
     }
     
     // free(new_arr);
+    // new_arr = NULL;
     // final_arr[new_l] = '\0';
     return final_arr;
 
@@ -77,21 +78,24 @@
 
 char* strtok_c(const char* str, const char* delim) 
 {
-    char *tok;
-    char *cpy = (char*)malloc(strlen(str) + 1);
-    
-    strcpy(cpy, str);
-    tok = strtok(cpy, delim);
-    printf("%s", tok);
-    while ((tok = strtok(0, delim))) 
-    {
-        printf("%s", tok);
-    }
-    
-    free(cpy);
-    cpy = NULL;
-    return tok;
+    // char* str2;
+    // strcpy(str2, str);
 
+    // int len = sizeof(str2);
+    // char* new_arr;
+    // for (int i = 0; i < len; i++)
+    // {
+    //     if (str2[i] != delim)
+    //     {
+    //         new_arr[i] = str2[i];
+    //     }
+    // }
+    // return new_arr;
+    
+    char* cpy = strdup(str);
+    char* tok = strtok(cpy, delim);
+    free(tok);
+    return tok;
 }
 
 
